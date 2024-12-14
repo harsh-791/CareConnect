@@ -1,7 +1,9 @@
 const { connect } = require('getstream');
 const bcrypt = require('bcrypt');
-const StreamChat = require('stream-chat');
+const StreamChat = require('stream-chat').StreamChat;
 const crypto = require('crypto');
+
+require('dotenv').config(); // Load environment variables from .env file
 
 const api_key = process.env.STREAM_API_KEY;
 const api_secret = process.env.STREAM_API_SECRET;
@@ -34,6 +36,8 @@ const signup = async (req, res) => {
 const login = async (req, res) => {
     try{
         const { username, password } = req.body;
+
+        console.log(username, password);
 
         const serverClient = connect(
             api_key,
