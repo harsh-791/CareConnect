@@ -23,6 +23,8 @@ const ChannelInner = ({ setIsEditing }) => {
     }
     
     if (sendMessage) {
+      // console.log('Message text:', message.text);
+      // console.log('Updated message:', updatedMessage);
       sendMessage(updatedMessage);
       setGiphyState(false);
     }
