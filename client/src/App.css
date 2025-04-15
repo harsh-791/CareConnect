@@ -199,7 +199,7 @@ body {
 }
 
 .str-chat {
-  background: unset;  /*Remove this it css fails*/
+  background: unset; /*Remove this it css fails*/
 }
 
 .str-chat-channel-list {
@@ -724,6 +724,20 @@ body {
   text-align: left;
 }
 
+.user-item__name-wrapper .str-chat__avatar {
+  margin-right: 8px;
+  min-width: 32px;
+}
+
+.user-item__name-wrapper .str-chat__avatar img {
+  width: 32px !important;
+  height: 32px !important;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  background: #f0f0f0;
+}
+
 .user-item__wrapper p {
   font-family: Helvetica Neue, sans-serif;
   font-size: 14px;
@@ -748,11 +762,18 @@ body {
 .user-item__invite-empty {
   height: 28px;
   width: 28px;
-  background: #f7f6f8;
-  border: 1px solid #dedddf;
+  background: #ffffff;
+  border: 2px solid #dedddf;
   border-radius: 14px;
   box-sizing: border-box;
   margin-left: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.user-item__wrapper:hover .user-item__invite-empty {
+  border: 2px solid var(--primary-color);
+  background: rgba(0, 95, 255, 0.08);
 }
 
 .edit-channel__container {
@@ -1139,7 +1160,7 @@ body {
 }
 
 .str-chat__avatar-image img.str-chat__avatar-image--loaded {
-  display: none;
+  display: block;
 }
 
 .str-chat__message-attachment {
@@ -1333,7 +1354,9 @@ ul.str-chat__simple-reactions-list:hover {
   width: 24px !important;
 }
 
-.str-chat__message-team-content--single:not(.str-chat__message-team-content--image)::before {
+.str-chat__message-team-content--single:not(
+    .str-chat__message-team-content--image
+  )::before {
   display: none;
 }
 
@@ -1827,4 +1850,39 @@ div.rta__autocomplete.str-chat__emojisearch {
   .channel-list__sidebar {
     display: none;
   }
+}
+
+.str-chat__avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.str-chat__avatar-image {
+  width: 32px;
+  height: 32px;
+  flex: none;
+  margin: 0;
+}
+
+.str-chat__avatar-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.user-item__name-wrapper .str-chat__avatar {
+  margin-right: 8px;
+  min-width: 32px;
+}
+
+.user-item__name-wrapper .str-chat__avatar img {
+  width: 32px !important;
+  height: 32px !important;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  background: #f0f0f0;
 }
